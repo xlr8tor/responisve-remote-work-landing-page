@@ -59,6 +59,7 @@ html {
  }
 
  button {
+    font: inherit;
      outline: none;
      padding: 1rem 1.5rem;
      border: 1px solid var(--border-color);
