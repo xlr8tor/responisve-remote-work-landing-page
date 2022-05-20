@@ -2,14 +2,12 @@ import styled from "styled-components";
 
 export const Wrapper = styled.main`
   &.main {
-    max-width: 1100px;
-    margin-left: auto;
-    margin-right: auto;
+    padding: 20px 0;
   }
 
   .main__image {
     display: block;
-    width: fit-content;
+    width: 100%;
   }
 
   .hero__image {
@@ -22,7 +20,7 @@ export const Wrapper = styled.main`
   }
 
   .title {
-    font-size: var(--big-font-size);
+    font-size: 3rem;
     line-height: 1;
     margin-top: var(--mb-1);
     margin-bottom: var(--mb-1);
@@ -57,12 +55,14 @@ export const Wrapper = styled.main`
     justify-content: center;
     align-items: center;
     max-width: 400px;
+    margin: auto;
   }
 
-  @media (min-width: 728px) {
+  @media (min-width: 768px) {
     &.main {
       grid-auto-flow: column;
       align-items: flex-end;
+      padding: 40px 2rem;
     }
 
     .main__content {
@@ -71,14 +71,33 @@ export const Wrapper = styled.main`
 
     .main__image {
       order: 1;
-    }
-
-    .title {
-      margin-bottom: var(--mb-3);
+      width: fit-content;
     }
 
     .title__span {
       display: block;
+    }
+
+    .description {
+      margin-bottom: var(--mb-2);
+      margin-left: 0;
+    }
+
+    .sponsors {
+      margin: 0;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    &.main {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 40px 0;
+    }
+
+    .title {
+      font-size: var(--big-font-size);
+      margin-bottom: var(--mb-3);
     }
 
     .description {

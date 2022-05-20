@@ -23,7 +23,7 @@ const Header = () => {
     });
   };
 
-  const isVisible = useWindowWidth() >= 568 ? true : false;
+  const isVisible = useWindowWidth() >= 768 ? true : false;
 
   return (
     <Wrapper className="header grid">
@@ -31,8 +31,16 @@ const Header = () => {
         <a href="/">
           <img src={Logo} alt="logo" />
         </a>
-        {sidebarVisible && !isVisible && (
-          <nav className="nav">
+        <div
+          className={
+            sidebarVisible && !isVisible
+              ? "nav__wrapper nav__wrapper-open"
+              : "nav__wrapper nav__wrapper-close"
+          }
+        >
+          <nav
+            className={sidebarVisible && !isVisible ? "nav nav__open" : "nav"}
+          >
             <div
               className="close__btn"
               onClick={() => {
@@ -66,7 +74,7 @@ const Header = () => {
                 <ul
                   className={
                     isDropDownOpen.Features
-                      ? "features__list features__open"
+                      ? "features__list features__open left"
                       : "features__list features__close"
                   }
                 >
@@ -154,7 +162,7 @@ const Header = () => {
               </li>
             </ul>
           </nav>
-        )}
+        </div>
       </div>
       {!isVisible && (
         <img

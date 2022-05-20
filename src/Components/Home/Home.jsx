@@ -9,7 +9,7 @@ import maker from "../../Images/client-maker.svg";
 import { useWindowWidth } from "../../Hooks/useWindowWidth";
 
 const Home = () => {
-  const imageUrl = useWindowWidth() >= 728 ? desktop : mobile;
+  const imageUrl = useWindowWidth() >= 768 ? desktop : mobile;
 
   return (
     <>
